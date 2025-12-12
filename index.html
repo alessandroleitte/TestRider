@@ -74,20 +74,17 @@
 
 		<p>Basta preencher o formulário com seus dados e aguardar nossa confirmação por e-mail. Os selecionados serão convidados para uma experiência completa, acompanhada por especialistas Triumph, em um ambiente seguro e preparado para extrair o melhor da Trident 660.</p>
 
-		<form method="POST" id="form" action="https://api.web3forms.com/submit">
+		<form id="form">
 
-			<input type="hidden" name="access_key" value="fcce2e04-ef79-4b5a-b43b-18e466114c91">
-			<input type="hidden" name="redirect" value="https://alessandroleitte.github.io/TestRider/msgenviada">
+		    <input type="text" name="nome" id="nome" placeholder="Nome:" required>
+		    <input type="email" name="email" id="email" placeholder="E-mail:" required>
+		    <input type="number" name="telefone" id="telefone" placeholder="Telefone:">
+		    <textarea placeholder="Digite sua mensagem:" id="mensagem" name="mensagem"></textarea>
 
-			<input type="text" name="nome" id="nome" placeholder="Nome:" required>
-			<input type="email" name="email" id="email" placeholder="E-mail:" required>
-			<input type="number" name="telefone" id="telefone" placeholder="Telefone:">
-			<textarea placeholder="Digite sua mensagem:" id="mensagem" name="message"></textarea>
-			
-			<div id="botoes">
-				<input type="submit" name="enviar" id="enviar" value="Enviar">
-				<input type="reset" name="apagar" id="apagar" value="Apagar">
-			</div>
+		    <div id="botoes">
+		        <input type="submit" id="enviar" value="Enviar">
+		        <input type="reset" id="apagar" value="Apagar">
+		    </div>
 		</form>
 
 	</section>
@@ -163,11 +160,17 @@
 		    if (endX - startX > 50) slidePrev();     // deslizou para a direita
 		});
 
+		document.getElementById("form").addEventListener("submit", function(e) {
+    	e.preventDefault(); 
+    	window.location.href = "https://alessandroleitte.github.io/TestRider/msgenviada";
+		});
+
 	</script>
 
 </body>
 
 </html>
+
 
 
 
